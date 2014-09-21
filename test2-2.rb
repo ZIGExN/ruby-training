@@ -2,7 +2,7 @@ require 'sqlite3'
 require 'csv'
 
 # データベースを作成
-db = SQLite3::Database.new('work4-1.db')
+db = SQLite3::Database.new('work2-2.db')
 
 # id(数値),name(文字列),address(文字列)のカラムを生成
 db.execute(%q{
