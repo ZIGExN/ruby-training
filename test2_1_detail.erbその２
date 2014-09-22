@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>タイトル</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <table>
+        <tbody>
+            <tr><th>店名</th><td><%= @restaurant['name'] %></td></tr>
+            <tr><th>支店名</th><td><%= @restaurant['property'] %></td></tr>
+            <tr><th>住所</th><td><%= @restaurant['address'] %></td></tr>
+            <tr><th></th><td><%= @restaurant['description'] %></td></tr>
+            <tr><th>お店ID</th><td><%= @restaurant['id'] %></td></tr>
+            <tr><th>店名欧文</th><td><%= @restaurant['alphabet'] %></td></tr>
+            <tr><th>店名ひらがな</th><td><%= @restaurant['name_kana'] %></td></tr>
+            <tr><th>pref_id</th><td><%= @restaurant['pref_id'] %></td></tr>
+            <tr><th>area_id</th><td><%= @restaurant['area_id'] %></td></tr>
+            <tr><th>最寄り駅ID(stations.csv参照)</th><td><%= @restaurant['station_id1'] %></td></tr>
+            <tr><th>時間(分)</th><td><%= @restaurant['station_time1'] %></td></tr>
+            <tr><th>距離(m)</th><td><%= @restaurant['station_distance1'] %></td></tr>
+            <tr><th>最寄り駅ID(stations.csv参照)</th><td><%= @restaurant['station_id2'] %></td></tr>
+            <tr><th>時間(分)</th><td><%= @restaurant['station_time2'] %></td></tr>
+            <tr><th>距離(m)</th><td><%= @restaurant['station_distance2'] %></td></tr>
+            <tr><th>最寄り駅ID(stations.csv参照)</th><td><%= @restaurant['station_id3'] %></td></tr>
+            <tr><th>時間(分)></th><td><%= @restaurant['station_time3'] %></td></tr>
+            <tr><th>距離(m)</th><td><%= @restaurant['station_distance3'] %></td></tr>
+            <tr><th>カテゴリID(categories.csv参照)</th><td><%= @restaurant['category_id1'] %></td></tr>
+            <tr><th>カテゴリID(categories.csv参照)</th><td><%= @restaurant['category_id2'] %></td></tr>
+            <tr><th>カテゴリID(categories.csv参照)</th><td><%= @restaurant['category_id3'] %></td></tr>
+            <tr><th>カテゴリID(categories.csv参照)</th><td><%= @restaurant['category_id4'] %></td></tr>
+            <tr><th>カテゴリID(categories.csv参照)</th><td><%= @restaurant['category_id5'] %></td></tr>
+            <tr><th>郵便番号</th><td><%= @restaurant['zip '] %></td></tr>
+            <tr><th>北緯</th><td><%= @restaurant['north_latitude '] %></td></tr>
+            <tr><th>東経</th><td><%= @restaurant['east_longitude '] %></td></tr>
+            <tr><th>備考</th><td><%= @restaurant['description '] %></td></tr>
+            <tr><th>利用目的</th><td><%= @restaurant['purpose '] %></td></tr>
+            <tr><th>モーニング有無</th><td><%= @restaurant['open_morning'] %></td></tr>
+            <tr><th>ランチ有無</th><td><%= @restaurant['open_lunch'] %></td></tr>
+            <tr><th>23時以降営業の可否</th><td><%= @restaurant['open_late'] %></td></tr>
+            <tr><th>写真アップロード数/th><td><%= @restaurant['photo_count'] %></td></tr>
+            <tr><th>特集掲載数</th><td><%= @restaurant['special_count'] %></td></tr>
+            <tr><th>メニュー投稿数</th><td><%= @restaurant['menu_count'] %></td></tr>
+            <tr><th>ファン数（お気に入り登録）</th><td><%= @restaurant['fan_count'] %></td></tr>
+            <tr><th>類型アクセス数</th><td><%= @restaurant['access_count'] %></td></tr>
+            <tr><th></th><td><%= @restaurant['created_on '] %></td></tr>
+            <tr><th></th><td><%= @restaurant['modified_on '] %></td></tr>
+            <tr><th></th><td><%= @restaurant['closed'] %></td></tr>
+        </tbody>
+    </table>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
