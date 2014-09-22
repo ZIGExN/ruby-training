@@ -11,7 +11,7 @@ categories_db.results_as_hash = true
 stations_db.results_as_hash = true
 
 
-get '/test/4-4/' do
+get '/test/2-1/' do
   @page_num = params[:page].to_i
   @keyword = params[:p]
   # テンプレートで使う変数には「@」をつける
@@ -24,7 +24,7 @@ get '/test/4-4/' do
 end
 
 
-get '/test/4-4/:id' do
+get '/test/2-1/:id' do
   # テンプレートで使う変数には「@」をつける
   @restaurant = db.execute('SELECT * FROM restaurants WHERE id = ? LIMIT 1;', [params[:id]]).first
   @categories_db = categories_db.execute('SELECT * FROM categories where id = ? or id = ? or id = ? or id = ? or id = ? ;', [@restaurant['category_id1'].to_i, @restaurant['category_id2'].to_i, @restaurant['category_id3'].to_i, @restaurant['category_id4'].to_i, @restaurant['category_id5'].to_i])
