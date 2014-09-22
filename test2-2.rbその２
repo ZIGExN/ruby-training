@@ -1,0 +1,34 @@
+require 'sinatra'
+require 'sinatra/reloader' # この行を書くと、再起動無しにファイルの変更が反映される
+require 'sqlite3'
+
+db = SQLite3::Database.new('work2-2.db')
+categories_db = SQLite3::Database.new('work2-3.db')
+stations_db = SQLite3::Database.new('work2-4.db')
+
+db.results_as_hash = true
+categories_db.results_as_hash = true
+stations_db.results_as_hash = true
+
+
+get '/test/4-4/' do
+  @page_num = params[:page].to_i
+  @keyword = params[:p]
+  # テンプレートで使う変数には「@」をつける
+  if @keyword != nil
+    @restaurants = db.execute('select * from restaurants where name like ?;', @keyword)
+  else
+    @restaurants = db.execute('SELECT * FROM restaurants LIMIT 30 offset ?;', 30*@page_num)
+  end
+  erb :test4_4_index
+end
+
+
+get '/test/4-4/:id' do
+  # テンプレートで使う変数には「@」をつける
+  @restaurant = db.execute('SELECT * FROM restaurants WHERE id = ? LIMIT 1;', [params[:id]]).first
+  @categories_db = categories_db.execute('SELECT * FROM categories where id = ? or id = ? or id = ? or id = ? or id = ? ;', [@restaurant['category_id1'].to_i, @restaurant['category_id2'].to_i, @restaurant['category_id3'].to_i, @restaurant['category_id4'].to_i, @restaurant['category_id5'].to_i])
+  @stations_db = stations_db.execute('SELECT * FROM stations where id = ? or id = ? or id = ? ;', [@restaurant['station_id1'].to_i, @restaurant['station_id2'].to_i, @restaurant['station_id3'].to_i])
+  # `views/test4_4_detail.erb`テンプレートとして使う
+  erb :test4_4_detail
+end
