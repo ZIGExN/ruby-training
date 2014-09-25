@@ -18,7 +18,10 @@
   </head>
   <body>
     <h1 class='col-lg-12'>レストラン一覧</h1>
-
+    <form>
+      <input name="p">
+      <input type="submit" value="送信">
+    </form>
 
     <div class='bs-docs-section'>
     <ul class= 'nav nav-pills'>
