@@ -5,7 +5,7 @@ require 'json'
 urls = []
 
 db = SQLite3::Database.new('crawling_detail.db')
-db.execute('CREATE TABLE IF NOT EXISTS seminars_detail (title varchar(100), image_url varchar(100), presenter varchar(200), presenter_detail varchar(300), seminars_contents varchar(1000), iine_count integer)')
+db.execute('CREATE TABLE IF NOT EXISTS seminars_detail (title varchar(100), image_url varchar(200), presenter varchar(200), presenter_detail varchar(300), seminars_contents varchar(1000), iine_count integer)')
 
 (1650 .. 1699).each do |parameta|
   urls.push("https://www.goodfind.jp/2016/seminar/" + parameta.to_s)
